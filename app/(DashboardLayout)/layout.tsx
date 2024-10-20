@@ -1,6 +1,7 @@
 import { auth } from "@/auth";
 import DashboardRootLayout from "./layout/layout";
 import { SessionProvider } from "next-auth/react"
+import React from "react";
 
 
 export default async function RootLayout({

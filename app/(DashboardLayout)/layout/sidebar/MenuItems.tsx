@@ -1,5 +1,6 @@
 import {
-  IconAperture,
+  IconActivity,
+  IconAperture, IconBuildingBank,
   IconCopy,
   IconLayoutDashboard,
   IconLogin,
@@ -21,6 +22,12 @@ const Menuitems = [
     title: "Dashboard",
     icon: IconLayoutDashboard,
     href: "/",
+  },
+  {
+    id: uniqueId(),
+    title: "Business",
+    icon: IconBuildingBank,
+    href: "/business",
   },
   {
     navlabel: true,

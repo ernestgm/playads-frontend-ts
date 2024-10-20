@@ -14,7 +14,6 @@ const ApiHandler = async () => {
         instance.defaults.headers.common['Authorization'] = `Bearer ${session.user.token}`
     }
 
-    console.log(instance)
     return instance
 }
 
