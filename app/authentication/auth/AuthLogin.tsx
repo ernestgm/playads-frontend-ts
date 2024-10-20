@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 
 import CustomTextField from "@/app/(DashboardLayout)/components/forms/theme-elements/CustomTextField";
+import { signInAction } from "../actions/action";
 
 interface loginType {
   title?: string;
@@ -28,6 +29,7 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
 
     {subtext}
 
+    <form action={signInAction}>
     <Stack>
       <Box>
         <Typography
@@ -37,9 +39,13 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
           htmlFor="username"
           mb="5px"
         >
-          Username
+          Email
         </Typography>
-        <CustomTextField variant="outlined" fullWidth />
+        <CustomTextField
+            name="email"
+            variant="outlined" 
+            fullWidth
+        />
       </Box>
       <Box mt="25px">
         <Typography
@@ -51,7 +57,12 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
         >
           Password
         </Typography>
-        <CustomTextField type="password" variant="outlined" fullWidth />
+        <CustomTextField
+          name="password" 
+          type="password" 
+          variant="outlined" 
+          fullWidth 
+        />
       </Box>
       <Stack
         justifyContent="space-between"
@@ -59,23 +70,6 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
         alignItems="center"
         my={2}
       >
-        <FormGroup>
-          <FormControlLabel
-            control={<Checkbox defaultChecked />}
-            label="Remeber this Device"
-          />
-        </FormGroup>
-        <Typography
-          component={Link}
-          href="/"
-          fontWeight="500"
-          sx={{
-            textDecoration: "none",
-            color: "primary.main",
-          }}
-        >
-          Forgot Password ?
-        </Typography>
       </Stack>
     </Stack>
     <Box>
@@ -84,13 +78,12 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
         variant="contained"
         size="large"
         fullWidth
-        component={Link}
-        href="/"
         type="submit"
       >
         Sign In
       </Button>
     </Box>
+    </form>
     {subtitle}
   </>
 );

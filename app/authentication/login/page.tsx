@@ -1,12 +1,17 @@
 "use client";
-import Link from "next/link";
 import { Grid, Box, Card, Stack, Typography } from "@mui/material";
 // components
 import PageContainer from "@/app/(DashboardLayout)/components/container/PageContainer";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import AuthLogin from "../auth/AuthLogin";
+import { useEffect } from "react";
+import { checkIsLogin } from "../actions/action";
 
-const Login2 = () => {
+const SignIn = () => {
+  useEffect(() => {
+    checkIsLogin()
+  }, [])
+
   return (
     <PageContainer title="Login" description="this is Login page">
       <Box
@@ -55,7 +60,7 @@ const Login2 = () => {
                     color="textSecondary"
                     mb={1}
                   >
-                    Your Social Campaigns
+                    PlayAds Sign In
                   </Typography>
                 }
                 subtitle={
@@ -65,24 +70,7 @@ const Login2 = () => {
                     justifyContent="center"
                     mt={3}
                   >
-                    <Typography
-                      color="textSecondary"
-                      variant="h6"
-                      fontWeight="500"
-                    >
-                      New to Modernize?
-                    </Typography>
-                    <Typography
-                      component={Link}
-                      href="/authentication/register"
-                      fontWeight="500"
-                      sx={{
-                        textDecoration: "none",
-                        color: "primary.main",
-                      }}
-                    >
-                      Create an account
-                    </Typography>
+                    {''}
                   </Stack>
                 }
               />
@@ -93,4 +81,4 @@ const Login2 = () => {
     </PageContainer>
   );
 };
-export default Login2;
+export default SignIn;

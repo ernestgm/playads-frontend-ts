@@ -26,7 +26,7 @@ interface Props {
 
 
 
-export default function RootLayout({
+export default function DashboardRootLayout({
   children,
 }: {
   children: React.ReactNode;

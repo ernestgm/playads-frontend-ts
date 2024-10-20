@@ -14,6 +14,6 @@ const CustomTextField = styled((props: any) => <TextField {...props} />)(({ them
   '& .Mui-disabled .MuiOutlinedInput-notchedOutline': {
     borderColor: theme.palette.grey[200],
   },
-}));
+})) as typeof TextField;
 
 export default CustomTextField;

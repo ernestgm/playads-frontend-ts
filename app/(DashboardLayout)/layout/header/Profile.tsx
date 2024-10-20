@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 
 import { IconListCheck, IconMail, IconUser } from "@tabler/icons-react";
+import { signOutAction } from "./actions";
 
 const Profile = () => {
   const [anchorEl2, setAnchorEl2] = useState(null);
@@ -82,15 +83,17 @@ const Profile = () => {
           <ListItemText>My Tasks</ListItemText>
         </MenuItem>
         <Box mt={1} py={1} px={2}>
-          <Button
-            href="/authentication/login"
-            variant="outlined"
-            color="primary"
-            component={Link}
-            fullWidth
-          >
-            Logout
-          </Button>
+          <form action={signOutAction}>
+            <Button
+              type="submit"
+              variant="outlined"
+              color="primary"
+              fullWidth
+            >
+              Logout
+            </Button>
+          </form>
+          
         </Box>
       </Menu>
     </Box>
