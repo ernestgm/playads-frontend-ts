@@ -15,7 +15,7 @@ import {
     Typography
 } from "@mui/material";
 import PROJECT_CONFIG from "@/config/config";
-import {applySortFilter, getComparator} from "@/utils/table/tableFunctions";
+import {applySortFilter, getComparator} from "@/utils/table/TableFunctions";
 import Scrollbar from "@/app/(DashboardLayout)/components/scrollbar";
 import TableListHead from "@/utils/table/TableListHead";
 import {ITableHead} from "@/utils/interfaces/tables";
